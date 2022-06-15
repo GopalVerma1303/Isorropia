@@ -1,0 +1,146 @@
+<%- include('header'); -%>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+            crossorigin="anonymous" />
+
+        <style>
+            body {
+                background-color: #f5f7fa;
+            }
+
+            .app-container {
+                height: auto;
+                width: 100%;
+                overflow-y: scroll;
+            }
+
+            .complete {
+                text-decoration: line-through;
+            }
+
+            .btn {
+                margin: auto auto;
+            }
+
+            .table-wrapper {
+                width: 48%;
+                text-align: center;
+            }
+
+            input[type="text"] {
+                font-family: 'Source Code Pro', monospace;
+                text-align: center;
+            }
+
+            .listTitle {
+                font-size: 200%;
+                margin-top: 3%;
+                margin-bottom: 2%;
+                color: #404e67;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="app-container d-flex align-items-center flex-column" ng-app="myApp" ng-controller="myController">
+            <!-- {{ task_name }} -->
+            <div class="listTitle">
+                <h3 class="listTitle" style="font-family:'Source Code Pro', monospace;">
+                    <%= listTitle %>
+                </h3>
+            </div>
+            
+            <!-- {{ yourName }} -->
+            <div class="table-wrapper">
+                <table class="fixed table table-hover table-bordered"
+                    style="font-family: 'Source Code Pro', monospace;">
+                    <thead>
+                        <tr>
+                            <th style="width: 8%;">NO.</th>
+                            <th style="width: 42%;">TASK</th>
+                            <th style="width: 20%;">STATUS</th>
+                            <th style="width: 30%;">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="task in tasks" class="{{ task.status ? 'table-success' : 'table-light' }}">
+                            <td>{{ $index + 1 }}</td>
+                            <td class="{{ task.status ? 'complete' : 'task' }}">
+                                {{ task.task_name }}
+                            </td>
+                            <td>{{ task.status ? "Completed" : "In progress" }}</td>
+                            <td>
+                                <button class="btn btn-success btn-sm " ng-click="finished($index)">
+                                    Finished
+                                </button>
+                                <button class="btn btn-danger btn-sm" ng-click="delete($index)">
+                                    Delete
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-sm-12 col-md-10 col-lg-6">
+                <form class="card card-lg">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col">
+                            <input id="myInput" ng-model="yourTask" type="text" autocomplete="off" id="formGroupExampleInput"
+                                class="form-control form-control-lg form-control-borderless" type="search"
+                                placeholder="Enter a task here">
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-lg" type="submit" ng-click="saveTask()">Add</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            var app = angular.module("myApp", []);
+            app.controller("myController", function ($scope) {
+                $scope.tasks = [];
+                $scope.saveTask = function () {
+                    $scope.tasks.push({ task_name: $scope.yourTask, status: false });
+
+                    // clearing input box
+                    document.getElementById('myInput').value = "";
+                };
+                $scope.getTask = function () {
+                    var oldTasks = $scope.tasks;
+                    $scope.tasks = [];
+                    angular.forEach(oldTasks, function (task) {
+                        if (!task.done) $scope.tasks.push(task);
+                    });
+                    localStorage.setItem("tasks", JSON.stringify($scope.tasks));
+                };
+                $scope.delete = function (i) {
+                    $scope.tasks.splice(i, 1);
+                };
+                $scope.finished = function (i) {
+                    $scope.tasks[i].status = true;
+                };
+            });
+        </script>
+
+        <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>  -->
+    </body>
+
+    <%- include('footer'); -%>
+
+
+    </html>

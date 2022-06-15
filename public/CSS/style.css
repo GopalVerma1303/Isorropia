@@ -1,0 +1,95 @@
+p {
+    font-weight: 1000;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.heading {
+    font-size: 200%;
+    ;
+    font-weight: 1000;
+    font-family: 'Source Code Pro', monospace;
+    margin-bottom: 5%;
+}
+
+.main-title {
+    font-size: 300%;
+}
+
+.row {
+    text-align: center;
+}
+
+.card {
+    /* margin: 5%; */
+    font-weight: 1000;
+    font-family: 'Source Code Pro', monospace;
+    transition-delay: all 5s linear;
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.03);
+}
+
+.sec-2-card {
+    transition: all .2s ease-in-out;
+}
+
+.sec-2-card:hover {
+    transform: scale(1.03);
+    background-color: rgb(218, 218, 218);
+}
+
+
+footer {
+
+    color: white;
+    color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 7%;
+    margin-top: 5%;
+}
+
+/* .card-heading{
+    font-weight: 1000;
+    font-family: 'Source Code Pro', monospace;
+} */
+
+
+
+.if {
+    padding: 1%;
+    color: rgb(153, 153, 153);
+}
+
+.btn {
+
+    font-weight: 1000 !important;
+    font-family: 'Source Code Pro', monospace !important;
+    color: white !important;
+    margin-top: 7%;
+    background-color: #404e67 !important;
+    transition: all .2s ease-in-out !important;
+}
+
+.btn:hover {
+    transform: scale(1.03) !important;
+    background-color: #2f394b !important;
+}
+
+#stats-subtitle {
+    margin-bottom: 5%;
+}
+
+.inputField {
+    width: 10%;
+}
+
+table.fixed {
+    table-layout: fixed;
+    overflow: hidden;
+    word-wrap:break-word;
+}

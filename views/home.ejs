@@ -1,0 +1,409 @@
+<%- include('header'); -%>
+
+    <div class="grey-bg container-fluid">
+        <section id="intro-of-the-page">
+            <div class="row heading">
+                <div class="col-12 mt-3 mb-1">
+                    <h1 class="main-title">Isorropía</h1>
+                    <p>"Let's plan future together."</p>
+                </div>
+            </div>
+        </section>
+        <section id="stats-subtitle">
+            <div class="row">
+                <div class="col-xl-3 col-md-12">
+                    <div class="card overflow-hidden sec-2-card">
+                        <div class="card-content">
+                            <div class="card-body cleartfix">
+                                <div class="media align-items-stretch">
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-clock font-large-2 mr-2"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Time</h4>
+                                        <span>
+                                            <%= curr %>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-md-12">
+                    <div class="card sec-2-card">
+                        <div class="card-content">
+                            <div class="card-body cleartfix">
+                                <div class="media align-items-stretch">
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-calendar font-large-2 mr-2"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Day & Date</h4>
+                                        <span>
+                                            <%= today %>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-12">
+                    <div class="card sec-2-card">
+                        <div class="card-content">
+                            <div class="card-body cleartfix">
+                                <div class="media align-items-stretch">
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-clipboard-list font-large-2 mr-2"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Tasks Pending</h4>
+                                        <span>2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-12">
+                    <div class="card sec-2-card">
+                        <div class="card-content">
+                            <div class="card-body cleartfix">
+                                <div class="media align-items-stretch">
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-clipboard-check font-large-2 mr-2"></i>
+                                    </div>
+                                    <div class="media-body">
+                                        <h4>Task Completed</h4>
+                                        <span>5</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <section id="minimal-statistics">
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card success">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3 class="success">64.89 %</h3>
+                                        <span>Today</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-calendar-day font-large-2 success"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-success
+                                    progress-bar-stripped" role="progressbar" style="width: 60%" aria-valuenow="60"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/Today" method="GET">
+                                    <button type="submit" name="list" value="Today"
+                                        class="btn btn-block btn-success">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left danger">
+                                        <h3>64.89 %</h3>
+                                        <span>Tomorrow</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-diagram-successor font-large-2 danger"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/Tomorrow" method="GET">
+                                    <button type="submit" name="btn-tom" value="btn-tom"
+                                        class="btn btn-block btn-danger">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left info">
+                                        <h3>64.89 %</h3>
+                                        <span>This Week</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-calendar-week font-large-2 info"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/thisWeek" method="GET">
+                                    <button type="submit" name="btn-this-week" value="btn-this-week"
+                                        class="btn btn-block btn-info">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left warning">
+                                        <h3>64.89 %</h3>
+                                        <span>Next Week</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-calendar-minus font-large-2 warning"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/nextWeek" method="GET">
+                                <button type="submit" name="btn-next-week" value="btn-next-week"
+                                    class="btn btn-block btn-warning">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left info">
+                                        <h3>64.89 %</h3>
+                                        <span>Lecture List</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-chalkboard-user font-large-2 info"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/lectureList" method="GET">
+                                <button type="submit" name="btn-lectureList" value="btn-lectureList"
+                                    class="btn btn-block btn-info">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left warning">
+                                        <h3>64.89 %</h3>
+                                        <span>Reading List</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-book font-large-2 warning"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/readingList" method="GET">
+                                <button type="submit" name="btn-readingList" value="btn-readingList"
+                                    class="btn btn-block btn-warning">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-3 col-sm-6 col-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left success">
+                                        <h3 class="success">64.89 %</h3>
+                                        <span>Assignment List</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-pen font-large-2 success"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/assignmentList" method="GET">
+                                <button type="submit" name="btn-assList" value="btn-assList"
+                                    class="btn btn-block btn-success">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 danger">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3>64.89 %</h3>
+                                        <span>Shopping List</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-bag-shopping font-large-2"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/shoppingList" method="GET">
+                                <button type="submit" name="btn-shoppingList" value="btn-shoppingList"
+                                    class="btn btn-block btn-danger">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-3 col-sm-6 col-12 success">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3 class="success">64.89 %</h3>
+                                        <span>Club List</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-palette font-large-2"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/clubList" method="GET">
+                                <button type="submit" name="btn-clubList" value="btn-clubList"
+                                    class="btn btn-block btn-success">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 danger">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3>64.89 %</h3>
+                                        <span>Show List</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-tv font-large-2"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/showList" method="GET">
+                                <button type="submit" name="btn-showList" value="btn-showList"
+                                    class="btn btn-block btn-danger">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 info">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3>64.89 %</h3>
+                                        <span>Travelling List</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-map-location-dot font-large-2 info"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/travellingList" method="GET">
+                                <button type="submit" name="btn-traList" value="btn-traList"
+                                    class="btn btn-block btn-info">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-sm-6 col-12 warning">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="card-body">
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <h3>64.89 %</h3>
+                                        <span>Health List</span>
+                                    </div>
+                                    <div class="align-self-center">
+                                        <i class="fa-solid fa-dumbbell font-large-2 warning"></i>
+                                    </div>
+                                </div>
+                                <div class="progress mt-1 mb-0" style="height: 7px;">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 60%"
+                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                                <form action="/healthList" method="GET">
+                                <button type="submit" name="btn-healthList" value="btn-healthList"
+                                    class="btn btn-block btn-warning">Open</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+    <%- include('footer'); -%>
+
+        </html>
